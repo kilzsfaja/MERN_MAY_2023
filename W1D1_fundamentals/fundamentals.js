@@ -20,7 +20,7 @@ console.log(animals)
 // var ninja = new person()
 
 // === DESTRUCTURING ====
-const firstName = "john";
+// const firstName = "john";
 const person = {
     firstName: 'Bob',
     lastName: 'Marley',
@@ -41,10 +41,18 @@ const person = {
     ],
     createdAt: 1543945177623
 };
+const varName = "age"
+person[varName] = 90;
+person.someKey = "new"
+// console.log(person)
 
 const ninja = {...person};
 person.firstName = "alice"
-console.log(ninja)
+// console.log(ninja)
+
+const {firstName, ...unicorns}= ninja
+console.log(unicorns)
+console.log(console.log())
 
 
 const {addresses: [,{secondAddress}]} = person;
@@ -97,3 +105,14 @@ b.push(99999)
 
 console.log(a);
 console.log(b);
+
+
+var foo = "bar";
+function magic(){
+    var foo;
+    foo = "hello world";
+    console.log(foo);
+}
+magic();
+console.log(foo);
+
