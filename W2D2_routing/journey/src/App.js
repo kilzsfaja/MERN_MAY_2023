@@ -22,7 +22,8 @@ function App() {
           {/* ACT I */}
           <Route path="/other" element={
             <>
-              <Main /><Other />
+              <Main />
+              <Other />
             </>
           } />
 
