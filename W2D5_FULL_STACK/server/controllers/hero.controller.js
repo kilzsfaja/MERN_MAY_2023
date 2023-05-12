@@ -20,7 +20,7 @@ module.exports.readAll = (req, res) => {
 module.exports.readOne = (req, res) => {
     Hero.findOne({ _id: req.params.id })
         .then(oneSingleHero => {
-            res.json({ Hero: oneSingleHero })
+            res.json(oneSingleHero)
         })
         .catch((err) => {
             res.json({ message: 'Something went wrong', error: err })
@@ -42,7 +42,7 @@ module.exports.create = (req, res) => {
 module.exports.update = (req, res) => {
     Hero.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true })
         .then(updatedHero => {
-            res.json({ Hero: updatedHero })
+            res.json(updatedHero)
         })
         .catch((err) => {
             res.json({ message: 'Something went wrong', error: err })
