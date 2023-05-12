@@ -7,7 +7,7 @@ const Hero = require("../models/hero.model")
 module.exports.readAll = (req, res) => {
     Hero.find()
         .then((allDaHeroes) => {
-            res.json({ Heros: allDaHeroes })
+            res.json(allDaHeroes)
         })
         .catch((err) => {
             res.json({ message: 'Something went wrong', error: err })
@@ -38,11 +38,7 @@ module.exports.create = (req, res) => {
 
 // UPDATE
 module.exports.update = (req, res) => {
-    Hero.findOneAndUpdate(
-        { _id: req.params.id },
-        req.body,
-        { new: true, runValidators: true }
-    )
+    Hero.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true })
         .then(updatedHero => {
             res.json({ Hero: updatedHero })
         })

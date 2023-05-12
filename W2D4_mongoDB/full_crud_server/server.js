@@ -1,6 +1,6 @@
 const express = require('express');
-const app = express();
 // console.log(app)
+const app = express();
 
 // middleware
 app.use(express.json(), express.urlencoded({ extended: true }));
@@ -15,9 +15,9 @@ const port = process.env.PORT
 require("./config/mongoose.config")
 
 // require the routes here to run
-require("./routes/hero.routes")(app)
 // const AllMyHeroRoutes = require("./routes/hero.routes");
 // AllMyHeroRoutes(app);
+require("./routes/hero.routes")(app)
 
 
 app.listen(port, () => console.log(`Listening on port ${port} for REQuests to RESpond to.`));
